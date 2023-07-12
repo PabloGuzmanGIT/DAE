@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${titulo}" >Title</title>
+</head>
+<body>
+
+
+<h1 th:text="${titulo}"  ></h1>
+
+<!--<div>-->
+<!--    <label for="">ID:</label>-->
+<!--    <input type="text" id="id" name="username" required>-->
+<!--</div>-->
+<!--<div>-->
+<!--    <label for="">Local:</label>-->
+<!--    <input type="text" id="local" name="username" required>-->
+<!--</div>-->
+<!--<div>-->
+<!--    <label for="">DNI:</label>-->
+<!--    <input type="text" id="DNI" name="username" required>-->
+<!--</div>-->
+<hr>
+<div>
+    <h2>Registrar</h2>
+    <form th:action="@{/visitas}" method="post" th:object="${visitas}">
+        <label for="id">ID:</label>
+        <input type="number" name="id" required>
+        <label for="local">Local:</label>
+        <input type="text"  name="local" required>
+        <label for="DNI">DNI:</label>
+        <input type="text"  name="dni" required>
+
+        <button type="submit" >Registrar</button>
+    </form>
+</div>
+<hr>
+
+<br>
+
+
+<hr>
+
+
+
+<div>
+    <h2>Actualizar</h2>
+    <form th:action="@{/visitas}" method="post" th:object="${visitas}">
+        <label for="id">ID:</label>
+        <input type="number" name="id" required>
+        <label for="local">Local:</label>
+        <input type="text"  name="local" required>
+        <label for="DNI">DNI:</label>
+        <input type="text"  name="dni" required>
+
+        <button onclick="updatte">Actualizar</button>
+    </form>
+
+</div>
+<hr>
+<br>
+<div>
+    <h2>Eliminar</h2>
+    <form th:action="@{/visitas}" method="post" th:object="${visitas}">
+        <label for="id">ID:</label>
+        <input type="number" name="id" required>
+        <button type="submit" onclick="delete">Eliminar</button>
+    </form>
+
+</div>
+<hr>
+<div>
+    <h2>Buscar</h2>
+    <!--    <form th:action="@{/visitas}" method="post" th:object="${visitas.id}">-->
+    <label for="id">ID:</label>
+    <input type="number" id="ident" name="id" required>
+    <button onclick="look">Buscar</button>
+    </form>
+</div>
+<hr>
+<br>
+<h2 th:text="${titulo}" ></h2>
+<table  th:if="${!visitlist.isEmpty()}">
+    <tr>
+        <th>ID</th>
+        <th>Local</th>
+        <th>DNI</th>
+        <th>Fecha</th>
+        <th>Hora</th>
+    </tr>
+    <tr th:each="visita:${visitlist}" >
+        <td th:text="${visita.id}"></td>
+        <td th:text="${visita.local}"></td>
+        <td th:text="${visita.dni}"></td>
+        <td th:text="${visita.fecha}"></td>
+        <td th:text="${visita.hora}"></td>
+
+    </tr>
+
+
+</table>
+
+</body>
+</html>

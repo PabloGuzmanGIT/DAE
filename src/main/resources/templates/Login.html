@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title th:text="${titulo}" ></title>
+</head>
+<body>
+
+<h2 th:text="${titulo}" ></h2>
+<form action="visitas" method="post">
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+    </div>
+    <div>
+        <button type="submit">Login</button>
+    </div>
+
+    <div>
+
+        <label th:if="${!logueados.isEmpty()}"> <span th:text="'Usuario Registrado   '+${logueados.size()} + ' Registro'" ></span> </label>
+    </div>
+
+</form>
+
+</body>
+</html>

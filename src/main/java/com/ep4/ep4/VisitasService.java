@@ -32,13 +32,7 @@ public class VisitasService {
         return false;
     }
 
-    public visitas obtenerporId(int id){
-        Optional<visitas> optionalVisitas = visitasRepository.findById(id);
-        if (optionalVisitas.isPresent()){
-            return optionalVisitas.get();
-        }else{
-            throw new RuntimeException("No existe el ID");
-        }
-    }
+
 
 }
+

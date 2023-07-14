@@ -22,6 +22,7 @@ public class visitasController {
         model.addAttribute("visitantes", "Registro visitantes");
         model.addAttribute("titulo", "Registro de Visitas");
         model.addAttribute("visitlist",visitasService.mostrarvisitas());
+//        model.addAttribute("searchById", visitasService.obtenerporId().getId());
 
 //        model.addAttribute("getbyID",visitasService.obtenerporId());
         return "visitas";

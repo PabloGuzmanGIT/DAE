@@ -7,8 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @AllArgsConstructor
 @Controller
 @RequestMapping("/visitas")
@@ -41,4 +39,11 @@ public class visitasController {
         visitasService.saving(visitas);
         return "redirect:/visitas";
     }
+
+    @DeleteMapping("{id}")
+    public String deleteVisitas(@PathVariable("id")int id){
+        visitasService.eliminar(id);
+        return "redirect:/visitas";
+    }
+
 }

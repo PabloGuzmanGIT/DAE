@@ -62,10 +62,10 @@
 <br>
 <div>
     <h2>Eliminar</h2>
-    <form th:action="@{/visitas}" method="post" th:object="${visitas}">
+    <form th:action="@{/visitas}" method="delete" th:object="${visitas}">
         <label for="id">ID:</label>
         <input type="number" name="id" required>
-        <button type="submit" onclick="delete">Eliminar</button>
+        <button type="submit" onclick=deleteVisitas>Eliminar</button>
     </form>
 
 </div>

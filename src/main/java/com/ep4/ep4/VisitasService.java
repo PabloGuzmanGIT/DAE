@@ -1,6 +1,7 @@
 package com.ep4.ep4;
 
 
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,7 @@ public class VisitasService {
 
     }
 
+    @Transactional
     public visitas saving(visitas visitas) {
         return visitasRepository.save(visitas);
     }
